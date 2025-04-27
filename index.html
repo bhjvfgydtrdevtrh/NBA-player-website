@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>頂級超跑鑑賞 - Supercar Showcase</title>
+  <meta name="description" content="探索世界頂級超跑品牌、十大經典車型與性能比較，包括 Koenigsegg, Pagani, Ferrari, Lamborghini, Mercedes-AMG ONE, McLaren, Bugatti, Rimac, Aston Martin 等。">
+  <meta name="keywords" content="超跑, 跑車, Hypercar, Koenigsegg, Pagani, Mercedes, AMG ONE, Ferrari, Lamborghini, McLaren, Bugatti, Porsche, Aston Martin, Rimac, SSC, Hennessey, 十大超跑, 性能比較, FAQ">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* General Text Color Optimization */
+    body p, body li, .comparison-table td, .faq-content p {
+      color: #555; /* Slightly darker grey for main text */
+    }
+
+    /* Styles for Featured Models Cards */
+    .featured-model-card {
+      border: 1px solid #eee;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #fff;
+      text-align: center;
+      transition: box-shadow 0.3s ease-in-out;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .featured-model-card:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .featured-model-card .model-image-link img { /* Target image within link */
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background-color: #f0f0f0;
+      display: block; /* Ensure image behaves as block inside link */
+    }
+     .featured-model-card h5 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: #333;
+     }
+    .featured-model-card p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    /* Styles for Brand Logo Wall */
+    .brand-logo-item {
+        padding: 15px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #eee;
+        margin-bottom: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+     .brand-logo-item a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+     }
+    .brand-logo-item:hover {
+         box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+    .brand-logo {
+        max-height: 60px;
+        max-width: 90%;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    .brand-name-caption {
+        font-size: 0.85rem;
+        margin-top: 5px;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    #brands .container {
+         max-width: 1140px;
+     }
+
+     /* Styles for Comparison Table */
+     .comparison-table-container {
+         overflow-x: auto;
+     }
+     .comparison-table table {
+        margin-top: 20px;
+        font-size: 0.9rem;
+     }
+     .comparison-table th {
+        background-color: #f8f9fa;
+        color: #333;
+     }
+      .comparison-table td, .comparison-table th {
+          vertical-align: middle;
+      }
+
+     /* Contact Section Simplification */
+     #contact .info-item {
+         width: 100%;
+         margin-bottom: 20px;
+     }
+     #contact .info-item i {
+         font-size: 32px;
+         margin-bottom: 10px;
+     }
+
+     /* NEW: Hero Section Background Image and Overlay */
+    #hero {
+      /* background-image removed from here if set inline previously */
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative; /* Needed for overlay */
+      /* Assuming template sets a default background, we override potentially */
+    }
+
+    /* Apply the NEW background image URL here */
+    #hero {
+       background-image: url('https://jbrcapital.com/wp-content/uploads/2-3.jpg');
+    }
+
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+      z-index: 1; /* Place overlay above background */
+    }
+    /* Ensure hero content (text, etc.) stays above the overlay */
+    #hero .container, #hero .about-info {
+        position: relative;
+        z-index: 2;
+    }
+     /* Ensure hero text color is white for readability on dark overlay */
+     #hero h2, #hero p, #hero h3 {
+         color: #ffffff !important; /* Force white color */
+     }
+     /* Specific adjustment for the aqua color text if needed */
+     #hero .about-info h2[style*="aqua"] {
+         color: aqua !important; /* Keep the aqua color */
+     }
+
+
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo.png" alt="網站 Logo">
+        <h1 class="sitename">超跑世界</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">首頁<br></a></li>
+          <li><a href="#brands">汽車品牌</a></li>
+          <li><a href="#featured-models">焦點車型</a></li>
+          <li><a href="#comparison-table">性能比較</a></li>
+          <li><a href="#faq">常見問題</a></li>
+          <li><a href="#contact">聯絡我們</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section dark-background">
+      <div class="container d-flex flex-column align-items-center text-center mt-auto">
+        <h2 data-aos="fade-up" data-aos-delay="100" class="">探索極致<br><span>超跑工藝</span></h2>
+        <p data-aos="fade-up" data-aos-delay="200">深入了解全球頂尖超級跑車的設計、性能與傳奇故事</p>
+      </div>
+      <div class="about-info mt-auto position-relative">
+        <div class="container position-relative" data-aos="fade-up">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2 style="color: aqua;">關於本站</h2>
+              <p>本網站致力於介紹世界各大知名超跑品牌及其代表性車款，從瑞典的極速猛獸到義大利的藝術品，再到德國的賽道科技結晶，帶您一覽汽車工藝的巔峰之作。</p>
+            </div>
+            <div class="col-lg-3">
+              <h3>品牌總覽</h3>
+              <p>探索各品牌的歷史、理念與著名車型。</p>
+            </div>
+            <div class="col-lg-3">
+              <h3>焦點車型</h3>
+              <p>深入了解特定超跑的設計細節與性能數據。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section id="brands" class="speakers section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>頂級汽車品牌</h2>
+        <p style="color: #6c757d;">塑造超跑世界的傳奇製造商</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="brand-logo-item">
+              <a href="https://www.koenigsegg.com/" target="_blank" rel="noopener noreferrer">
+                 <img src="https://m.media-amazon.com/images/I/615xnj4ZydL.jpg" class="brand-logo" alt="Koenigsegg Logo">
+                 <p class="brand-name-caption">Koenigsegg</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="brand-logo-item">
+               <a href="https://www.pagani.com/" target="_blank" rel="noopener noreferrer">
+                 <img src="https://car-logos.b-cdn.net/wp-content/uploads/2023/03/pagani-logo-1992-present-scaled.webp" class="brand-logo" alt="Pagani Logo">
+                 <p class="brand-name-caption">Pagani</p>
+               </a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="brand-logo-item">
+              <a href="https://www.mercedes-amg.com/" target="_blank" rel="noopener noreferrer">
+                 <img src="https://static.vecteezy.com/system/resources/thumbnails/033/952/867/small_2x/mercedes-benz-amg-car-logo-free-vector.jpg" class="brand-logo" alt="Mercedes-AMG Logo">
+                 <p class="brand-name-caption">Mercedes-AMG</p>
+               </a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="brand-logo-item">
+              <a href="https://www.ferrari.com/" target="_blank" rel="noopener noreferrer">
+                 <img src="https://toppng.com/uploads/preview/ferrari-logo-vector-11573940119fbb6defbwp.png" class="brand-logo" alt="Ferrari Logo">
+                 <p class="brand-name-caption">Ferrari</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="brand-logo-item">
+              <a href="https://www.lamborghini.com/" target="_blank" rel="noopener noreferrer">
+                 <img src="https://static.lambocars.com/wp-content/uploads/2024/08/559522_v1-1600x0.jpg" class="brand-logo" alt="Lamborghini Logo">
+                 <p class="brand-name-caption">Lamborghini</p>
+               </a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="brand-logo-item">
+              <a href="https://cars.mclaren.com/" target="_blank" rel="noopener noreferrer">
+                 <img src="https://logoeps.com/wp-content/uploads/2012/12/mclaren-logo-vector.png" class="brand-logo" alt="McLaren Logo">
+                 <p class="brand-name-caption">McLaren</p>
+              </a>
+            </div>
+          </div>
+
+           <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="400">
+             <div class="brand-logo-item">
+               <a href="https://www.bugatti.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="https://www.supercars.net/blog/wp-content/uploads/2019/12/Bugatti-Logo.png" class="brand-logo" alt="Bugatti Logo">
+                  <p class="brand-name-caption">Bugatti</p>
+               </a>
+             </div>
+           </div>
+
+           <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="450">
+             <div class="brand-logo-item">
+               <a href="https://www.porsche.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="https://di-uploads-pod3.dealerinspire.com/porscheoffremont/uploads/2018/09/porsche-logo.jpg" class="brand-logo" alt="Porsche Logo">
+                  <p class="brand-name-caption">Porsche</p>
+                </a>
+             </div>
+           </div>
+
+           <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="500">
+             <div class="brand-logo-item">
+               <a href="https://www.astonmartin.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-PhjAnf_O9DLjr0voYvFIHP4GgkpIwVlfXQ&s" class="brand-logo" alt="Aston Martin Logo">
+                  <p class="brand-name-caption">Aston Martin</p>
+               </a>
+             </div>
+           </div>
+
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="550">
+             <div class="brand-logo-item">
+               <a href="https://www.rimac-automobili.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="https://www.supercars.net/blog/wp-content/uploads/2019/12/Rimac-Logo.png" class="brand-logo" alt="Rimac Automobili Logo">
+                  <p class="brand-name-caption">Rimac</p>
+                </a>
+             </div>
+           </div>
+
+           <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="600">
+             <div class="brand-logo-item">
+               <a href="https://www.sscnorthamerica.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="https://w7.pngwing.com/pngs/988/439/png-transparent-ssc-north-america-ssc-aero-car-ssc-tuatara-car-emblem-logo-car.png" class="brand-logo" alt="SSC North America Logo">
+                  <p class="brand-name-caption">SSC</p>
+                </a>
+             </div>
+           </div>
+
+           <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="fade-up" data-aos-delay="650">
+             <div class="brand-logo-item">
+               <a href="https://www.hennesseyspecialvehicles.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ynJcejZcLQhg9dUze21wFGi5zPzSiq_BMw&s" class="brand-logo" alt="Hennessey Performance Logo">
+                  <p class="brand-name-caption">Hennessey</p>
+                </a>
+             </div>
+           </div>
+
+        </div>
+      </div>
+    </section><section id="featured-models" class="schedule section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>十大焦點車型鑑賞</h2>
+        <p>精選全球最令人驚嘆的超級跑車與極致跑車</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="featured-model-card">
+              <a href="https://www.koenigsegg.com/model/jesko-absolut" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                <img src="https://i.ytimg.com/vi/WKpE1bdmGII/maxresdefault.jpg" alt="Koenigsegg Jesko Absolut">
+              </a>
+              <div>
+                 <h5>Koenigsegg Jesko Absolut</h5>
+                 <p>Koenigsegg - 追求極致高速的空氣力學設計</p>
+               </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="featured-model-card">
+              <a href="https://www.pagani.com/pagani-utopia/" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                 <img src="https://www.motortrend.com/files/6765a48236942500084e3888/001-2024-pagani-utopia.jpg?w=768&width=768&q=75&format=webp" alt="Pagani Utopia">
+              </a>
+              <div>
+                  <h5>Pagani Utopia</h5>
+                  <p>Pagani - 純粹 V12 動力與手排選項的回歸</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="featured-model-card">
+              <a href="https://www.mercedes-amg.com/en/vehicles/mercedes-amg-one.html" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                 <img src="https://www.cnet.com/a/img/resize/e9c1b6fa8df0f1795e60b960561d23163b96ad95/hub/2022/06/01/f6c1a967-a0fc-4e07-b7b0-a045c25fa279/mercedes-amg-one-production-hypercar-125.jpg?auto=webp&width=1200" alt="Mercedes-AMG ONE">
+              </a>
+              <div>
+                  <h5>Mercedes-AMG ONE</h5>
+                  <p>Mercedes-AMG - F1 科技街道化的極致展現</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="featured-model-card">
+              <a href="https://www.ferrari.com/en-EN/auto/sf90-stradale" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                <img src="https://bluesky.cdn.imgeng.in/cogstock-images/8758c2c7-6c6b-4c52-a89c-21e46909db0d.jpg?migeng=/w_1200/cmpr_99/" alt="Ferrari SF90 Stradale">
+               </a>
+               <div>
+                  <h5>Ferrari SF90 Stradale</h5>
+                  <p>Ferrari - 千匹油電混合動力先鋒</p>
+               </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="featured-model-card">
+               <a href="https://www.lamborghini.com/en-en/models/revuelto" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                 <img src="https://images3.kingautos.net/model/2023/32/mJ6YnZSgkqGZpJOcmKA-834x470.webp" alt="Lamborghini Revuelto">
+               </a>
+               <div>
+                  <h5>Lamborghini Revuelto</h5>
+                  <p>Lamborghini - 新世代 V12 油電混合大牛</p>
+                </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="featured-model-card">
+               <a href="https://cars.mclaren.com/en/ultimate-series/mclaren-senna" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                 <img src="https://www.europeanprestige.co.uk/blobs/stock/282/images/a7aa91e7-ad68-42b8-9e67-c1dcff6f90f0/hi4a2696.jpg?width=2000&height=1333" alt="McLaren Senna">
+               </a>
+               <div>
+                  <h5>McLaren Senna</h5>
+                  <p>McLaren - 以極致賽道性能為名的傳奇</p>
+                </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="featured-model-card">
+               <a href="https://www.bugatti.com/chiron-super-sport/" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                 <img src="https://www.carstuff.com.tw/media/k2/items/cache/dd69187c6c0f2af486a150d7e21b7329_XL.jpg" alt="Bugatti Chiron Super Sport 300+">
+               </a>
+               <div>
+                  <h5>Bugatti Chiron Super Sport 300+</h5>
+                  <p>Bugatti - 突破 300 英里時速的量產車</p>
+                </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
+            <div class="featured-model-card">
+                <a href="https://www.porsche.com/usa/models/918/918-spyder/" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Porsche_918_Spyder_at_2014_NY_Auto_Show.jpg/1200px-Porsche_918_Spyder_at_2014_NY_Auto_Show.jpg" alt="Porsche 918 Spyder">
+               </a>
+               <div>
+                  <h5>Porsche 918 Spyder</h5>
+                  <p>Porsche - 德意志油電混合 Hypercar 代表</p>
+                </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1000">
+            <div class="featured-model-card">
+               <a href="https://www.astonmartin.com/en/models/aston-martin-valkyrie" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                  <img src="https://i.ytimg.com/vi/_pF9pH_kwAo/maxresdefault.jpg" alt="Aston Martin Valkyrie">
+               </a>
+               <div>
+                  <h5>Aston Martin Valkyrie</h5>
+                  <p>Aston Martin - 與紅牛 F1 合作的 V12 道路版賽車</p>
+                </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1050">
+            <div class="featured-model-card">
+               <a href="https://www.rimac-automobili.com/nevera/" target="_blank" rel="noopener noreferrer" class="model-image-link">
+                 <img src="https://www.motortrend.com/files/66bf6c23f29c070008924bab/rimac-nevera-r-33.jpg?w=768&width=768&q=75&format=webp" alt="Rimac Nevera">
+               </a>
+               <div>
+                  <h5>Rimac Nevera</h5>
+                  <p>Rimac Automobili - 純電動 Hypercar 的加速王者</p>
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><section id="comparison-table" class="comparison-table section">
+       <div class="container section-title" data-aos="fade-up">
+        <h2>性能規格比較 (十大焦點車型)</h2>
+        <p>快速比較部分焦點車型的關鍵數據 (數據僅供參考)</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="comparison-table-container">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">車型 (Model)</th>
+                <th scope="col">品牌 (Brand)</th>
+                <th scope="col">引擎/動力 (Engine/Power)</th>
+                <th scope="col">馬力 (HP approx.)</th>
+                <th scope="col">0-100km/h (s approx.)</th>
+                <th scope="col">極速 (Top Speed km/h approx.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jesko Absolut</td>
+                <td>Koenigsegg</td>
+                <td>5.0L V8 Twin-Turbo</td>
+                <td>1600+</td>
+                <td>~2.5</td>
+                <td>500+ (理論值)</td>
+              </tr>
+              <tr>
+                <td>Utopia</td>
+                <td>Pagani</td>
+                <td>6.0L V12 Twin-Turbo (AMG)</td>
+                <td>~864</td>
+                <td>~2.8</td>
+                <td>~350+</td>
+              </tr>
+               <tr>
+                <td>AMG ONE</td>
+                <td>Mercedes-AMG</td>
+                <td>1.6L V6 Turbo Hybrid (F1)</td>
+                <td>1063</td>
+                <td>2.9</td>
+                <td>352 (電子限速)</td>
+              </tr>
+              <tr>
+                <td>SF90 Stradale</td>
+                <td>Ferrari</td>
+                <td>4.0L V8 Twin-Turbo Hybrid</td>
+                <td>1000</td>
+                <td>2.5</td>
+                <td>340</td>
+              </tr>
+              <tr>
+                <td>Revuelto</td>
+                <td>Lamborghini</td>
+                <td>6.5L V12 Hybrid</td>
+                <td>1015</td>
+                <td>2.5</td>
+                <td>350+</td>
+              </tr>
+              <tr>
+                <td>Senna</td>
+                <td>McLaren</td>
+                <td>4.0L V8 Twin-Turbo</td>
+                <td>800</td>
+                <td>2.8</td>
+                <td>335</td>
+              </tr>
+               <tr>
+                <td>Chiron Super Sport 300+</td>
+                <td>Bugatti</td>
+                <td>8.0L W16 Quad-Turbo</td>
+                <td>1600</td>
+                <td>~2.4</td>
+                <td>490+ (紀錄)</td>
+              </tr>
+              <tr>
+                <td>918 Spyder</td>
+                <td>Porsche</td>
+                <td>4.6L V8 Hybrid</td>
+                <td>887</td>
+                <td>2.6</td>
+                <td>345</td>
+              </tr>
+              <tr>
+                <td>Valkyrie</td>
+                <td>Aston Martin</td>
+                <td>6.5L V12 Hybrid (Cosworth)</td>
+                <td>1160</td>
+                <td>~2.5</td>
+                <td>~400+</td>
+              </tr>
+               <tr>
+                <td>Nevera</td>
+                <td>Rimac</td>
+                <td>純電動 四馬達 (Full Electric Quad Motor)</td>
+                <td>1914</td>
+                <td>1.81</td>
+                <td>412</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section> <section id="faq" class="faq section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>常見問題 (FAQ)</h2>
+        <p>關於超跑的一些常見疑問</p>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-container">
+
+              <div class="faq-item faq-active"> <h3>什麼是超跑 (Supercar) 或極致跑車 (Hypercar)？</h3>
+                <div class="faq-content">
+                  <p>這些術語通常指性能、技術、價格和稀有度都達到頂尖水平的跑車。Hypercar 通常比 Supercar 更極端、更昂貴、性能更強大。界線有時模糊，但都代表汽車工程的巔峰。</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item"> <h3>為什麼超跑這麼昂貴？</h3>
+                <div class="faq-content">
+                  <p>高昂的價格來自於多方面因素：先進材料（如碳纖維、鈦合金）的廣泛使用、尖端技術的研發成本、極致性能調校、手工打造的工藝、產量稀少以及品牌價值。</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item"> <h3>目前世界上最快的量產車是哪一款？ (截至 2025 年初)</h3>
+                <div class="faq-content">
+                  <p>「最快」的定義有多種。在極速方面，Bugatti Chiron Super Sport 300+ 和 SSC Tuatara 曾創下或宣稱非常高的紀錄。在加速方面，Rimac Nevera 等電動 Hypercar 表現驚人（0-100km/h 低於 2 秒）。紀錄可能會持續被刷新。</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item"> <h3>紐柏林賽道單圈時間有何意義？</h3>
+                 <div class="faq-content">
+                   <p>德國紐柏林北環賽道 (Nürburgring Nordschleife) 以其長度、複雜度和挑戰性聞名，常被車廠用來測試和證明車輛的綜合性能（操控、加速、煞車、耐用性）。因此，單圈時間成為衡量高性能車輛的重要指標之一。</p>
+                 </div>
+                 <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item"> <h3>馬力 (HP) 和扭力 (Torque) 有什麼不同？</h3>
+                 <div class="faq-content">
+                   <p>簡單來說，馬力決定了車輛的最高速度潛力（做功能力），而扭力則影響車輛的加速能力和牽引力（轉動力量）。高扭力通常意味著起步和中段加速更快。</p>
+                 </div>
+                 <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item"> <h3>超跑適合日常駕駛嗎？</h3>
+                 <div class="faq-content">
+                   <p>大多數量產超跑在設計上都考慮了基本的日常可用性，但通常伴隨著妥協：低底盤、硬懸吊、有限的載物空間、高油耗以及高昂的維護成本。部分 Hypercar 則更偏向賽道，日常駕駛極不方便。</p>
+                 </div>
+                 <i class="faq-toggle bi bi-chevron-right"></i>
+               </div>
+
+              <div class="faq-item"> <h3>什麼是超跑的混合動力 (Hybridization)？</h3>
+                 <div class="faq-content">
+                   <p>指車輛同時使用傳統內燃機和電動馬達提供動力。在超跑中，混合動力系統通常用於提升性能（瞬間扭力、填補渦輪遲滯）和效率，而非僅僅為了節能。例如 LaFerrari, P1, 918 Spyder, SF90, Revuelto, AMG ONE 等。</p>
+                 </div>
+                 <i class="faq-toggle bi bi-chevron-right"></i>
+               </div>
+
+               <div class="faq-item"> <h3>超跑是如何進行測試的？</h3>
+                 <div class="faq-content">
+                   <p>除了實驗室測試，超跑會經歷嚴苛的實際道路測試（涵蓋各種氣候和路況）、賽道測試（評估極限操控和性能）以及風洞測試（優化空氣力學）。許多零件也會經過單獨的耐久性和性能測試。</p>
+                 </div>
+                 <i class="faq-toggle bi bi-chevron-right"></i>
+               </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section id="contact" class="contact section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>聯絡資訊</h2>
+        <p>若您有任何問題或建議，歡迎透過以下方式與我們聯繫</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center text-center">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>地址</h3>
+              <p>A108 Adam Street<br>New York, NY 535022</p> </div>
+          </div><div class="col-lg-4 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>電話</h3>
+              <p>+1 5589 55488 55</p> </div>
+          </div><div class="col-lg-4 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>電子郵件</h3>
+              <p>info@example.com</p> </div>
+          </div></div>
+
+      </div>
+    </section></main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center"> <span class="sitename">超跑世界</span> </a>
+            <div class="footer-contact pt-3">
+               <p>A108 Adam Street</p> <p>New York, NY 535022</p>
+               <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+               <p><strong>Email:</strong> <span>info@example.com</span></p>
+            </div>
+             <div class="social-links d-flex mt-4">
+               <a href=""><i class="bi bi-twitter-x"></i></a>
+               <a href="https://www.facebook.com/?locale=zh_TW" target="_blank"><i class="bi bi-facebook"></i></a>
+               <a href=""><i class="bi bi-instagram"></i></a>
+               <a href=""><i class="bi bi-youtube"></i></a>
+             </div>
+          </div>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>網站導覽</h4>
+            <ul>
+              <li><a href="#hero">首頁</a></li>
+              <li><a href="#brands">汽車品牌</a></li>
+              <li><a href="#featured-models">焦點車型</a></li>
+              <li><a href="#comparison-table">性能比較</a></li>
+              <li><a href="#faq">常見問題</a></li>
+               <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div> © Copyright <strong><span>超跑世界</span></strong>. All Rights Reserved </div>
+          <div class="credits"> Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
